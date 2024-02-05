@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from './Button';
+import HandButton from './HandButton';
 
 function App() {
+  // eslint-disable-next-line
+  const handleButtonClick = (value) => console.log(value);
+  // eslint-disable-next-line
+  const handleClearClick = () => console.log('처음부터');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Button onClick={handleClearClick}> 처음부터</Button>
+      <HandButton value="rock" onClick={handleButtonClick} />
+      <HandButton value="scissor" onClick={handleButtonClick} />
+      <HandButton value="paper" onClick={handleButtonClick} />
     </div>
   );
 }
